@@ -2,7 +2,7 @@
 
  php web application allow user to share like photos.
 
-## Apacahe stting for routing
+## Apacahe settings for routing
 
 RewriteEngine on
 
