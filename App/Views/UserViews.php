@@ -16,6 +16,7 @@
                 $db = new Database();
                 $images = $db->get('image', sprintf('user_id="%s"', $_SESSION['usr']));
             }
+
             catch(Exception $e){ /* LOG ERROR */ }
 
             render('profile', ['images'=>$images]);
@@ -26,12 +27,13 @@
             if($_SERVER['REQUEST_METHOD'] === "POST"){
 
                 if(!empty($_POST['name']) and !empty($_POST['pass'])){
-                    $db = new Database();
-                    $usr = $db->find('user', sprintf('usr_name="%s"', $_POST['name']));
 
-                    if(password_verify($_POST['pass'], $usr['password'])){
+                    $db = new Database();
+                    $usr = $db->get('user', sprintf('usr_name="%s"', $_POST['name']));
+
+                    if(password_verify($_POST['pass'], $usr[0]['password'])){
                         session_start();
-                        $_SESSION['usr'] = $usr['id'];
+                        $_SESSION['usr'] = $usr[0]['id'];
                         redirect('profile');
                     }
                 }
@@ -74,7 +76,7 @@
                 if($db->insert('user', $paramters)){
                     $usr = $db->get('user', sprintf('usr_name="%s"', $_POST['name']));
                     session_start();
-                    $_SESSION['usr'] = $usr['usr_name'];
+                    $_SESSION['usr'] = $usr[0]['id'];
 
                     redirect('/');
                 }

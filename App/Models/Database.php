@@ -38,20 +38,6 @@
 			return $stmt->fetchAll(PDO::FETCH_ASSOC);
 		}
 
-		public function find($table, $id)
-		{
-			$query = sprintf(
-				"SELECT * FROM %s WHERE id=%s",
-				$table, $id
-			);
-			$stmt = $this->pdo->prepare($query);
-		
-			$stmt->execute();
-
-			return $stmt->fetch(PDO::FETCH_ASSOC);
-		}
-
-
 		public function insert($table, $paramters)
 		{
 
