@@ -12,6 +12,12 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Save</button>
+        <?php if(isset($_SESSION['msg'])): ?>
+            <br/>
+            <div class="alert alert-warning" role="alert">
+                <?= $_SESSION['msg']; ?>
+            </div>
+    <?php  unset($_SESSION['msg']); endif ?>
     </form>
 
 <?php   require 'partials/footer.php'; ?>
