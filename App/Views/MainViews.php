@@ -63,21 +63,15 @@
             render('new_img');
         }
 
-<<<<<<< HEAD
         public static function delete_img()
         {
             session_start();
-=======
-        public static function delete_img(){
-            // session_start();
->>>>>>> 72d5499d81e9eab294ee0add96676d2820023b7f
             if(!isset($_GET['id'])){
                 redirect('/');
             }
             if(empty($_SESSION['usr'])){
                 redirect_flash('/login', 'Your not allowed to do take this action.');
             }
-<<<<<<< HEAD
             
             $db = new Database();
 
@@ -134,8 +128,5 @@
             }
 
             redirect_flash('/', 'failed to like the image');
-=======
-            // if user own
->>>>>>> 72d5499d81e9eab294ee0add96676d2820023b7f
         }
     }

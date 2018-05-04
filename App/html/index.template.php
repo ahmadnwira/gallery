@@ -1,7 +1,6 @@
 <?php require 'partials/header.php'; ?>
 
 <div class="container">
-<<<<<<< HEAD
     <?php if(isset($_SESSION['msg'])): ?>
         <br/>
         <div class="alert alert-warning" role="alert">
@@ -9,8 +8,6 @@
         </div>
     <?php  unset($_SESSION['msg']); endif ?>
     
-=======
->>>>>>> 72d5499d81e9eab294ee0add96676d2820023b7f
     <div class="row hidden-md-up">
         <?php foreach($images as $img): ?>
             <div class="col-md-4">
@@ -22,11 +19,7 @@
                             published: <?= $img['created_at']?> <br>
                             <?= $img['likes_count'] ?> people liked this
                         </p>
-<<<<<<< HEAD
                         <a href="like?id=<?=$img['id']?>" class="btn btn-primary">like</a>
-=======
-                        <a href="#" class="card-link">like</a>
->>>>>>> 72d5499d81e9eab294ee0add96676d2820023b7f
                     </div>
                 </div>
             </div>

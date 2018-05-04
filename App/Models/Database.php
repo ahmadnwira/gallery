@@ -33,7 +33,6 @@
 			);
 			$stmt = $this->pdo->prepare($query);
 		
-<<<<<<< HEAD
 			try{
 				$stmt->execute();
 
@@ -42,19 +41,10 @@
 			catch(PDOException $e){
 				return false;
 			}
-=======
-			$stmt->execute();
-
-			return $stmt->fetchAll(PDO::FETCH_ASSOC);
->>>>>>> 72d5499d81e9eab294ee0add96676d2820023b7f
 		}
 
 		public function insert($table, $paramters)
 		{
-<<<<<<< HEAD
-=======
-
->>>>>>> 72d5499d81e9eab294ee0add96676d2820023b7f
 			$query = sprintf(
 				"INSERT INTO %s (%s) values (%s)",
 				$table,
@@ -67,16 +57,9 @@
 			try{
 				$stmt->execute($paramters);
 			}
-<<<<<<< HEAD
 			catch(PDOException $e){
 				return false;
 			}
-=======
-			catch(Exception $e){
-				return false;
-			}
-
->>>>>>> 72d5499d81e9eab294ee0add96676d2820023b7f
 			return true;
 		}
 
@@ -89,7 +72,6 @@
 			try{
 				$stmt->execute();
 			}
-<<<<<<< HEAD
 			catch(PDOException $e){
 				return false;
 			}
@@ -108,16 +90,9 @@
 				$stmt->execute($paramters);
 			}
 			catch(PDOException $e){
-=======
-			catch(Exception $e){
->>>>>>> 72d5499d81e9eab294ee0add96676d2820023b7f
 				return false;
 			}
 
 			return true;
 		}
-<<<<<<< HEAD
-=======
-
->>>>>>> 72d5499d81e9eab294ee0add96676d2820023b7f
 	}
