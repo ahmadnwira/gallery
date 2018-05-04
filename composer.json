@@ -1,0 +1,24 @@
+{
+    "name": "ahmed/my-library",
+    "description": "application helps you organize your media library Music, Movies and Books.",
+    "authors": [
+        {
+            "name": "Ahmed Salah",
+            "email": "ahmed22502@gmail.com"
+        }
+    ],
+
+    "require": {},
+
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    },
+
+    "autoload": {
+        "psr-4":{
+            "Views\\Main\\":"App/Views",
+            "Views\\User\\":"App/Views",
+            "Models\\":"App/Models"
+        }
+    }
+}
